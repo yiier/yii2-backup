@@ -1,10 +1,10 @@
 <?php
 
-namespace yiier\modules\backup;
+namespace yiier\backup;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'backend\modules\backup\controllers';
+    public $controllerNamespace = 'yiier\backup\controllers';
 
     public function init()
     {
