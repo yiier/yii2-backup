@@ -35,7 +35,7 @@ class BackupController extends Controller
     {
 
         return \Yii::$app->mailer->compose('backup')
-            ->setFrom([\Yii::$app->params['supportEmail'] => Yii::$app->setting->get('siteName') . '机器人'])
+            ->setFrom([\Yii::$app->setting->get('smtpUser') => Yii::$app->setting->get('siteName') . '机器人'])
             ->setTo(Yii::$app->params['backupEmail'])
             ->setSubject('数据库定时备份系统-' . Yii::$app->setting->get('siteName'))
             ->attach($sqlFile)
