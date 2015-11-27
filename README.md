@@ -10,8 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
+
 php composer.phar require --prefer-dist yiier/yii2-backup "*"
 php composer.phar require funson86/yii2-setting "*"
+
+// or
+
+php composer.phar require --prefer-dist yiier/yii2-backup "*"
 ```
 
 or add
@@ -19,6 +24,10 @@ or add
 ```
 "yiier/yii2-backup": "*",
 "funson86/yii2-setting": "*"
+
+// or
+
+"yiier/yii2-backup": "*",
 ```
 
 to the require section of your `composer.json` file.
@@ -33,21 +42,46 @@ main.php
 
 ```
 'modules' => [
-        'setting' => [
-            'class' => 'funson86\setting\Module',
-            'controllerNamespace' => 'funson86\setting\controllers',
-        ],
-        'backup' => [
-            'class' => 'yiier\backup\Module',
+    'setting' => [
+        'class' => 'funson86\setting\Module',
+        'controllerNamespace' => 'funson86\setting\controllers',
+    ],
+    'backup' => [
+        'class' => 'yiier\backup\Module',
+    ],
+],
+
+// or
+
+'modules' => [
+    'backup' => [
+        'class' => 'yiier\backup\Module',
+    ],
+],
+'components' => [
+    // ...
+    'mailer' => [
+        'class' => 'yii\swiftmailer\Mailer',
+        'viewPath' => '@common/mail',
+        'transport' => [
+            'class' => 'Swift_SmtpTransport',
+            'host' => 'smtp.xx.xx',
+            'username' => 'xxxxx',
+            'password' => 'xxxx',
+            'port' => 25,
+            'encryption' => 'tls',
         ],
     ],
+    // ...
+],
+
 
 ```
 
 params.php
 ```
 'backupEmail' => 'xxx@xx',
-'supportEmail' => 'yyy@yy',
+'supportEmail' => 'yyy@yy', // from address must be same as supportEmail
 ```
 
 
