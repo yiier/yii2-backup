@@ -10,6 +10,7 @@ namespace yiier\backup\helpers;
 
 use yii\base\Object;
 use Yii;
+use yii\db\Exception;
 
 class MysqlBackup extends Object
 {
@@ -46,7 +47,7 @@ class MysqlBackup extends Object
             $cmd = Yii::$app->db->createCommand($sqlArray);
             try {
                 $cmd->execute();
-            } catch (CDbException $e) {
+            } catch (Exception $e) {
                 $message = $e->getMessage();
             }
 
