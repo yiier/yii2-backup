@@ -93,7 +93,7 @@ class MysqlBackup extends Object
             $valueString = "('" . $valueString . "'),";
             $values = "\n" . $valueString;
             if ($values != "") {
-                $data_string .= "INSERT INTO `$tableName` (`$items`) VALUES" . rtrim($values, ",") . ";;;" . PHP_EOL;
+                $data_string .= "INSERT INTO `$tableName` (`$items`) VALUES" . rtrim($values, ",") . ";" . PHP_EOL;
             }
         }
 
