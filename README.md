@@ -1,5 +1,11 @@
 yii2-backup
 ===========
+
+[![Latest Stable Version](https://poser.pugx.org/yiier/yii2-backup/v/stable)](https://packagist.org/packages/yiier/yii2-backup) 
+[![Total Downloads](https://poser.pugx.org/yiier/yii2-backup/downloads)](https://packagist.org/packages/yiier/yii2-backup) 
+[![Latest Unstable Version](https://poser.pugx.org/yiier/yii2-backup/v/unstable)](https://packagist.org/packages/yiier/yii2-backup) 
+[![License](https://poser.pugx.org/yiier/yii2-backup/license)](https://packagist.org/packages/yiier/yii2-backup)
+
 Database Backup and Restore functionality
 
 Installation
